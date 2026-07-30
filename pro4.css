@@ -1,0 +1,61 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+.container{
+width:90%;
+margin:40px auto;
+text-align:center;
+}
+
+h1{
+color:#2563eb;
+margin-bottom:30px;
+}
+
+.reportBox{
+display:flex;
+justify-content:space-around;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:30px;
+width:250px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#444;
+}
+
+.card p{
+font-size:28px;
+font-weight:bold;
+color:#2563eb;
+}
+
+button{
+margin-top:40px;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense History</title>
+    <link rel="stylesheet" href="pro3.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Expense History</h1>
+    <input
+type="text"
+id="search"
+placeholder="🔍 Search Expense..."
+onkeyup="searchExpense()">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Name</th>
+
+                <th>Category</th>
+
+                <th>Amount</th>
+
+                <th>Date</th>
+
+                <th>Payment</th>
+
+                <th>Priority</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="historyTable">
+
+        </tbody>
+
+    </table>
+
+    <br>
+    <button onclick="deleteAllExpenses()">
+    🗑 Delete All Expenses
+</button>
+
+
+    <button onclick="window.location.href='pro1.html'">
+        ⬅ Back to Dashboard
+    </button>
+
+</div>
+
+<script src="pro3.js"></script>
+
+</body>
+</html>

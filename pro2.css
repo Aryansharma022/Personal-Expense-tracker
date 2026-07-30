@@ -1,0 +1,206 @@
+/* ===========================
+   Reset Default Browser Style
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+/* ===========================
+        Body
+=========================== */
+
+body{
+
+    background:#f4f7fc;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+      Main Container
+=========================== */
+
+.container{
+
+    width:700px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+/* ===========================
+        Heading
+=========================== */
+
+h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+        Form
+=========================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* ===========================
+        Labels
+=========================== */
+
+label{
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    margin-top:15px;
+
+    margin-bottom:8px;
+
+}
+
+/* ===========================
+ Inputs, Select, Textarea
+=========================== */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:0.3s;
+
+}
+
+/* ===========================
+ Focus Effect
+=========================== */
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border:2px solid #2563eb;
+
+}
+
+/* ===========================
+ File Upload
+=========================== */
+
+input[type=file]{
+
+    border:none;
+
+}
+
+/* ===========================
+ Buttons
+=========================== */
+
+button{
+
+    margin-top:25px;
+
+    padding:14px;
+
+    font-size:17px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+/* Add Expense Button */
+
+button:first-of-type{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* Reset Button */
+
+button:last-of-type{
+
+    background:#dc2626;
+
+    color:white;
+
+}
+
+/* Hover */
+
+button:first-of-type:hover{
+
+    background:#1d4ed8;
+
+}
+
+button:last-of-type:hover{
+
+    background:#b91c1c;
+
+}
+
+/* ===========================
+ Responsive
+=========================== */
+
+@media(max-width:768px){
+
+.container{
+
+width:95%;
+
+padding:20px;
+
+}
+
+}

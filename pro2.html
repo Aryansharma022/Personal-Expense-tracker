@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Add Expense</title>
+
+<link rel="stylesheet"
+href="pro2.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Add New Expense</h1>
+
+<form id="expenseForm">
+
+<label>Expense Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter Expense Name">
+
+<label>Category</label>
+
+<select id="category">
+
+<option>Food</option>
+
+<option>Travel</option>
+
+<option>Shopping</option>
+
+<option>Medical</option>
+
+<option>Education</option>
+
+<option>Bills</option>
+
+<option>Entertainment</option>
+
+<option>Investment</option>
+
+<option>Others</option>
+
+</select>
+
+<label>Amount</label>
+
+<input
+type="number"
+id="amount"
+placeholder="Enter Amount">
+
+<label>Date</label>
+
+<input
+type="date"
+id="date">
+
+<label>Payment Method</label>
+
+<select id="payment">
+
+<option>Cash</option>
+
+<option>UPI</option>
+
+<option>Debit Card</option>
+
+<option>Credit Card</option>
+
+<option>Net Banking</option>
+
+</select>
+
+<label>Priority</label>
+
+<select id="priority">
+
+<option>Low</option>
+
+<option>Medium</option>
+
+<option>High</option>
+
+</select>
+
+<label>Notes</label>
+
+<textarea
+id="notes"
+rows="4"
+placeholder="Write notes"></textarea>
+
+<label>Upload Receipt</label>
+
+<input
+type="file"
+id="receipt">
+
+<button
+type="button"
+onclick="addExpense()">
+
+Add Expense
+
+</button>
+
+<button
+type="reset">
+
+Reset
+
+</button>
+
+</form>
+
+</div>
+
+<script src="pro2.js"></script>
+
+</body>
+
+</html>

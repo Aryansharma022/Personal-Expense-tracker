@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="pro1.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>💰 Expense Tracker</h2>
+
+        <ul>
+
+    <li class="active">
+  
+        <a href="pro1.html">🏠 Dashboard</a>
+    </li>
+
+    <li>
+        <a href="pro2.html">➕ Add Expense</a>
+    </li>
+
+    <li>
+        <a href="pro3.html">📋 Expense History</a>
+    </li>
+
+    <li>
+        <a href="pro4.html">📊 Reports</a>
+    </li>
+
+    <li>
+        <a href="pro5.html">👤 Profile</a>
+    </li>
+
+    <li>
+        <a href="pro.html">🚪 Logout</a>
+    </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Section -->
+    <div class="main">
+
+        <!-- Top Navigation -->
+        <div class="topbar">
+
+            <h1>Dashboard</h1>
+
+            <p id="dateTime"></p>
+
+            <div class="user">
+
+                👤 Welcome,
+                <span id="username"></span>
+
+            </div>
+
+        </div>
+
+        <!-- Cards -->
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Expense</h3>
+
+                <p id="expense">₹0</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Monthly Budget</h3>
+
+                <p>₹20,000</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Savings</h3>
+
+                <p id="saving">₹20,000</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Remaining</h3>
+
+                <p id="remaining">₹20,000</p>
+
+            </div>
+
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="transactions">
+
+            <h2>Recent Expenses</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Category</th>
+
+                        <th>Amount</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="recentExpense">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-box">
+
+            <h2>Monthly Budget Usage</h2>
+
+            <progress
+                id="budgetBar"
+                value="0"
+                max="20000">
+
+            </progress>
+
+        </div>
+
+    </div>
+
+<script src="pro1.js"></script>
+
+</body>
+
+</html>

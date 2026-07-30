@@ -1,0 +1,122 @@
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Whole webpage */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #79d5ea, #9333ea);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login box */
+.login-box {
+    background-color: white;
+    width: 380px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgb(76, 113, 236);
+    text-align: center;
+}
+#email{
+    border-radius: 9px;
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    margin-bottom: 0px;
+    padding: 5px;
+    align-items: center;
+}
+
+/* Main heading */
+h1 {
+    color: #5019c7;
+    margin-bottom: 8px;
+}
+
+/* Welcome text */
+h3 {
+    color: rgb(28, 71, 164);
+    margin-bottom: 25px;
+}
+
+/* Input boxes */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Password section */
+.password-box {
+    position: relative;
+}
+
+/* Eye icon */
+#eye {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* Remember section */
+.remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #2563eb;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Sign Up button */
+.signup {
+    background-color: #16a34a;
+}
+
+.signup:hover {
+    background-color: #15803d;
+}
