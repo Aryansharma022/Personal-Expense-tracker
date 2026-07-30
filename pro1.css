@@ -1,3 +1,4 @@
+
 /* Reset browser default settings */
 *{
     margin:0;
@@ -169,20 +170,44 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
-@media(max-width:650px){
+@media(max-width:768px){
 
 .sidebar{
-
-display:none;
-
+    display:none;
 }
 
 .main{
-
-margin-left:0;
-width:100%;
-
+    margin-left:0;
+    width:100%;
+    padding:15px;
 }
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.transactions{
+    overflow-x:auto;
+}
+
+.transactions table{
+    min-width:500px;
+}
+
+#dateTime{
+    margin-left:0;
+}
+
+.user{
+    font-size:15px;
+}
+
 
 .cards{
 
@@ -202,19 +227,10 @@ grid-template-columns:1fr;
 }
 
 #dateTime{
-
-font-size:16px;
-
-font-weight:bold;
-
-color:#555;
-
-margin-top:8px;
-
-}
-#dateTime{
-    margin-left:20px;
     font-size:16px;
+    font-weight:bold;
     color:#555;
+    margin-top:8px;
+    margin-left:20px;
     display:inline-block;
 }
