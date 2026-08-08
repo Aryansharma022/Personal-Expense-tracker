@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ExpenseMate | Login</title>
+<link rel="icon" href="logo.jpeg">
+
+<link rel="stylesheet" href="pro.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left">
+
+        <img src="logo.jpeg" class="login-logo">
+
+<h1>ExpenseMate</h1>
+        <p>
+            Welcome back! Track your expenses, manage your budget,
+            and save money smartly.
+        </p>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2489/2489756.png" alt="Expense Image">
+
+    </div>
+
+    <div class="right">
+
+        <h2>Login</h2>
+
+        <form>
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email">
+
+            <label>Password</label>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password">
+
+                <button
+                    type="button"
+                    id="showPassword">
+
+                    👁
+
+                </button>
+
+            </div>
+
+            <div class="options">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="remember">
+
+                    Remember Me
+
+                </label>
+
+                <a href="#" id="forgotPassword">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+            <button
+                type="button"
+                class="login-btn"
+                onclick="login()">
+
+                Login
+
+            </button>
+
+            <button
+                type="button"
+                class="signup-btn"
+                onclick="signup()">
+
+                Sign Up
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="pro.js"></script>
+
+</body>
+
+</html>
