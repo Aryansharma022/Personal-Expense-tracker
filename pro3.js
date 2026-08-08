@@ -1,85 +1,123 @@
+// ===================================
+// ExpenseMate - Expense History
+// ===================================
+
 let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
-let table = document.getElementById("historyTable");
+displayExpenses(expenses);
 
-function displayExpenses() {
-    function searchExpense(){
+// ===================================
+// Display Expenses
+// ===================================
 
-let input=document.getElementById("search").value.toLowerCase();
+function displayExpenses(data){
 
-let rows=document.querySelectorAll("#historyTable tr");
-
-rows.forEach(function(row){
-
-let text=row.innerText.toLowerCase();
-
-if(text.includes(input)){
-
-row.style.display="";
-
-}
-
-else{
-
-row.style.display="none";
-
-}
-
-});
-
-}
+    let table = document.getElementById("expenseTable");
 
     table.innerHTML = "";
 
-    expenses.forEach(function(expense, index){
+    let total = 0;
 
-        table.innerHTML += `
-        <tr>
-            <td>${expense.name}</td>
-            <td>${expense.category}</td>
-            <td>₹${expense.amount}</td>
-            <td>${expense.date}</td>
-            <td>${expense.payment}</td>
-            <td>${expense.priority}</td>
-            <td>
-                <button onclick="deleteExpense(${index})">
-                    Delete
-                </button>
-            </td>
-        </tr>
-        `;
-    });
+    for(let i = 0; i < data.length; i++){
+
+        total += Number(data[i].amount);
+
+        let row = table.insertRow();
+
+        row.insertCell(0).innerHTML = data[i].name;
+        row.insertCell(1).innerHTML = data[i].category;
+        row.insertCell(2).innerHTML = "₹" + data[i].amount;
+        row.insertCell(3).innerHTML = data[i].date;
+        row.insertCell(4).innerHTML = data[i].payment;
+        row.insertCell(5).innerHTML = data[i].priority;
+
+        row.insertCell(6).innerHTML =
+        `<button class="delete-btn" onclick="deleteExpense(${i})">
+        Delete
+        </button>`;
+
+    }
+
+    document.getElementById("totalExpense").innerHTML = "₹" + total;
 
 }
+
+// ===================================
+// Delete One Expense
+// ===================================
 
 function deleteExpense(index){
 
-    expenses.splice(index,1);
+    if(confirm("Delete this expense?")){
 
-    localStorage.setItem(
-        "expenses",
-        JSON.stringify(expenses)
-    );
+        expenses.splice(index,1);
 
-    displayExpenses();
+        localStorage.setItem("expenses",JSON.stringify(expenses));
+
+        displayExpenses(expenses);
+
+    }
 
 }
 
-displayExpenses();
-function deleteAllExpenses(){
+// ===================================
+// Delete All Expenses
+// ===================================
 
-    let confirmDelete = confirm("Are you sure you want to delete all expenses?");
+function deleteAll(){
 
-    if(confirmDelete){
+    if(confirm("Delete all expenses?")){
 
         localStorage.removeItem("expenses");
 
         expenses = [];
 
-        displayExpenses();
-
-        alert("All expenses deleted successfully.");
+        displayExpenses(expenses);
 
     }
+
+}
+
+// ===================================
+// Search Expense
+// ===================================
+
+function searchExpense(){
+
+    let text = document.getElementById("search").value.toLowerCase();
+
+    let filtered = expenses.filter(function(expense){
+
+        return expense.name.toLowerCase().includes(text);
+
+    });
+
+    displayExpenses(filtered);
+
+}
+
+// ===================================
+// Filter Category
+// ===================================
+
+function filterCategory(){
+
+    let category = document.getElementById("filter").value;
+
+    if(category == "All"){
+
+        displayExpenses(expenses);
+
+        return;
+
+    }
+
+    let filtered = expenses.filter(function(expense){
+
+        return expense.category == category;
+
+    });
+
+    displayExpenses(filtered);
 
 }
