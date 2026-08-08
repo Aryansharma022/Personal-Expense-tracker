@@ -1,10 +1,24 @@
-// Function to add expense
+// ======================================
+// ExpenseMate - Add Expense
+// ======================================
+
+// Set today's date automatically
+
+window.onload = function(){
+
+    let today = new Date().toISOString().split("T")[0];
+
+    document.getElementById("date").value = today;
+
+}
+
+// ======================================
+// Add Expense
+// ======================================
 
 function addExpense(){
 
-    // Get values from form
-
-    let name = document.getElementById("name").value;
+    let name = document.getElementById("name").value.trim();
 
     let category = document.getElementById("category").value;
 
@@ -16,23 +30,33 @@ function addExpense(){
 
     let priority = document.getElementById("priority").value;
 
-    let notes = document.getElementById("notes").value;
-
+    let notes = document.getElementById("notes").value.trim();
 
     // Validation
 
     if(name=="" || amount=="" || date==""){
 
-        alert("Please Fill All Required Fields");
+        alert("Please fill all required fields.");
 
         return;
 
     }
 
+    if(Number(amount)<=0){
+
+        alert("Amount must be greater than 0.");
+
+        return;
+
+    }
+
+    // Get existing expenses
+
+    let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
     // Create Expense Object
 
-    let expense={
+    let expense = {
 
         name:name,
 
@@ -50,42 +74,52 @@ function addExpense(){
 
     };
 
-
-    // Read Old Expenses
-
-    let expenses=
-
-    JSON.parse(localStorage.getItem("expenses"))
-
-    || [];
-
-
-    // Add New Expense
+    // Save Expense
 
     expenses.push(expense);
 
+    localStorage.setItem("expenses",JSON.stringify(expenses));
 
-    // Save Again
-
-    localStorage.setItem(
-
-    "expenses",
-
-    JSON.stringify(expenses)
-
-    );
-
-
-    alert("Expense Added Successfully ✅");
-
+    alert("✅ Expense Added Successfully!");
 
     // Clear Form
 
     document.getElementById("expenseForm").reset();
 
+    // Set today's date again
 
-    // Go Back to Dashboard
+    let today = new Date().toISOString().split("T")[0];
 
-    window.location.href="pro1.html";
+    document.getElementById("date").value = today;
 
 }
+
+// ======================================
+// Prevent Negative Amount
+// ======================================
+
+document.getElementById("amount").addEventListener("input",function(){
+
+    if(this.value < 0){
+
+        this.value = "";
+
+    }
+
+});
+
+// ======================================
+// Character Limit for Notes
+// ======================================
+
+document.getElementById("notes").addEventListener("input",function(){
+
+    if(this.value.length > 200){
+
+        alert("Maximum 200 characters allowed.");
+
+        this.value = this.value.substring(0,200);
+
+    }
+
+});
