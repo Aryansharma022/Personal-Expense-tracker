@@ -3,156 +3,186 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard</title>
-
-    <link rel="stylesheet"
-          href="pro1.css">
+<title>ExpenseMate Dashboard</title>
+<link rel="icon" href="logo.jpeg">
+<link rel="stylesheet" href="pro1.css">
 
 </head>
 
 <body>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
+<!-- Sidebar -->
 
-        <h2>💰 Expense Tracker</h2>
+<div class="sidebar">
 
-        <ul>
+<h2>
 
-    <li class="active">
-  
-        <a href="pro1.html">🏠 Dashboard</a>
-    </li>
+<img src="logo.jpeg" class="side-logo">
 
-    <li>
-        <a href="pro2.html">➕ Add Expense</a>
-    </li>
+ExpenseMate
 
-    <li>
-        <a href="pro3.html">📋 Expense History</a>
-    </li>
+</h2>
 
-    <li>
-        <a href="pro4.html">📊 Reports</a>
-    </li>
+<ul>
 
-    <li>
-        <a href="pro5.html">👤 Profile</a>
-    </li>
+<li class="active"><a href="pro1.html">🏠 Dashboard</a></li>
 
-    <li>
-        <a href="pro.html">🚪 Logout</a>
-    </li>
+<li><a href="pro2.html">➕ Add Expense</a></li>
 
-        </ul>
+<li><a href="pro3.html">📋 Expense History</a></li>
 
-    </div>
+<li><a href="pro4.html">📊 Reports</a></li>
 
-    <!-- Main Section -->
-    <div class="main">
+<li><a href="pro5.html">👤 Profile</a></li>
 
-        <!-- Top Navigation -->
-        <div class="topbar">
+<li><a href="pro.html">🚪 Logout</a></li>
 
-            <h1>Dashboard</h1>
+</ul>
 
-            <p id="dateTime"></p>
+</div>
 
-            <div class="user">
+<!-- Main -->
 
-                👤 Welcome,
-                <span id="username"></span>
+<div class="main">
 
-            </div>
+<!-- Top -->
 
-        </div>
+<div class="topbar">
 
-        <!-- Cards -->
-        <div class="cards">
+<div>
 
-            <div class="card">
+<h1>Dashboard</h1>
 
-                <h3>Total Expense</h3>
+<p id="dateTime"></p>
 
-                <p id="expense">₹0</p>
+</div>
 
-            </div>
+<div class="user">
 
-            <div class="card">
+👋 Welcome,
 
-                <h3>Monthly Budget</h3>
+<span id="username"></span>
 
-                <p>₹20,000</p>
+</div>
 
-            </div>
+</div>
 
-            <div class="card">
+<!-- Quick Buttons -->
 
-                <h3>Savings</h3>
+<div class="quick">
 
-                <p id="saving">₹20,000</p>
+<a href="pro2.html">➕ Add Expense</a>
 
-            </div>
+<a href="pro3.html">📋 History</a>
 
-            <div class="card">
+<a href="pro4.html">📊 Reports</a>
 
-                <h3>Remaining</h3>
+<a href="pro5.html">👤 Profile</a>
 
-                <p id="remaining">₹20,000</p>
+</div>
 
-            </div>
+<!-- Cards -->
 
-        </div>
+<div class="cards">
 
-        <!-- Recent Transactions -->
-        <div class="transactions">
+<div class="card">
 
-            <h2>Recent Expenses</h2>
+<h3>Total Expense</h3>
 
-            <table>
+<h2 id="expense">₹0</h2>
 
-                <thead>
+</div>
 
-                    <tr>
+<div class="card">
 
-                        <th>Name</th>
+<h3>Monthly Budget</h3>
 
-                        <th>Category</th>
+<h2 id="budget">₹0</h2>
 
-                        <th>Amount</th>
+</div>
 
-                    </tr>
+<div class="card">
 
-                </thead>
+<h3>Remaining</h3>
 
-                <tbody id="recentExpense">
+<h2 id="remaining">₹0</h2>
 
-                </tbody>
+</div>
 
-            </table>
+<div class="card">
 
-        </div>
+<h3>Savings</h3>
 
-        <!-- Progress -->
-        <div class="progress-box">
+<h2 id="saving">₹0</h2>
 
-            <h2>Monthly Budget Usage</h2>
+</div>
 
-            <progress
-                id="budgetBar"
-                value="0"
-                max="20000">
+</div>
 
-            </progress>
+<!-- Progress -->
 
-        </div>
+<div class="progress-box">
 
-    </div>
+<h2>Budget Usage</h2>
+
+<progress id="budgetBar" value="0" max="100"></progress>
+
+<p id="budgetText"></p>
+
+</div>
+
+<!-- Recent Expenses -->
+
+<div class="transactions">
+
+<h2>Recent Expenses</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Category</th>
+
+<th>Amount</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="recentExpense">
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Quote -->
+
+<div class="quote">
+
+<h3>💡 Saving Tip</h3>
+
+<p>
+
+"Do not save what is left after spending,
+spend what is left after saving."
+
+</p>
+
+</div>
+
+</div>
 
 <script src="pro1.js"></script>
 
