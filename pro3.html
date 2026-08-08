@@ -1,65 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense History</title>
-    <link rel="stylesheet" href="pro3.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Expense History</title>
+<link rel="icon" href="logo.jpeg">
+<link rel="stylesheet" href="pro3.css">
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <h1>Expense History</h1>
-    <input
+<h1>📋 Expense History</h1>
+
+<div class="top">
+
+<input
 type="text"
 id="search"
 placeholder="🔍 Search Expense..."
 onkeyup="searchExpense()">
 
-    <table>
+<select id="filter" onchange="filterCategory()">
 
-        <thead>
+<option value="All">All Categories</option>
 
-            <tr>
+<option value="Food 🍔">Food 🍔</option>
 
-                <th>Name</th>
+<option value="Travel ✈">Travel ✈</option>
 
-                <th>Category</th>
+<option value="Shopping 🛍">Shopping 🛍</option>
 
-                <th>Amount</th>
+<option value="Medical 🏥">Medical 🏥</option>
 
-                <th>Date</th>
+<option value="Education 📚">Education 📚</option>
 
-                <th>Payment</th>
+<option value="Bills 💡">Bills 💡</option>
 
-                <th>Priority</th>
+<option value="Entertainment 🎮">Entertainment 🎮</option>
 
-                <th>Action</th>
+<option value="Investment 📈">Investment 📈</option>
 
-            </tr>
+<option value="Others 📦">Others 📦</option>
 
-        </thead>
+</select>
 
-        <tbody id="historyTable">
+</div>
 
-        </tbody>
+<table>
 
-    </table>
+<thead>
 
-    <br>
-    <button onclick="deleteAllExpenses()">
-    🗑 Delete All Expenses
+<tr>
+
+<th>Name</th>
+
+<th>Category</th>
+
+<th>Amount</th>
+
+<th>Date</th>
+
+<th>Payment</th>
+
+<th>Priority</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="expenseTable">
+
+</tbody>
+
+</table>
+
+<div class="bottom">
+
+<h2>
+
+Total Expense :
+
+<span id="totalExpense">
+
+₹0
+
+</span>
+
+</h2>
+
+<button onclick="deleteAll()" class="delete">
+
+🗑 Delete All
+
 </button>
 
+<a href="pro1.html">
 
-    <button onclick="window.location.href='pro1.html'">
-        ⬅ Back to Dashboard
-    </button>
+<button class="dashboard">
+
+🏠 Dashboard
+
+</button>
+
+</a>
+
+</div>
 
 </div>
 
 <script src="pro3.js"></script>
 
 </body>
+
 </html>
