@@ -1,35 +1,81 @@
+// ================================
+// ExpenseMate Dashboard
+// ================================
+
+// Get User Name
+
+let username = localStorage.getItem("username");
+
+if(username == null){
+
+    username = "User";
+
+}
+
+document.getElementById("username").innerHTML = username;
+
+
+// ================================
 // Monthly Budget
-const monthlyBudget = 20000;
+// ================================
 
-// Get saved email from Local Storage
-let userEmail = localStorage.getItem("userEmail");
+let monthlyBudget = Number(localStorage.getItem("budget"));
 
-// Show email on dashboard
-document.getElementById("username").innerHTML = userEmail;
+if(monthlyBudget == 0){
 
-// Get expense list from Local Storage
+    monthlyBudget = 20000;
+
+}
+
+document.getElementById("budget").innerHTML = "₹" + monthlyBudget;
+
+
+// ================================
+// Expenses
+// ================================
+
 let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
-// Variables
 let totalExpense = 0;
 
-// Table body
 let table = document.getElementById("recentExpense");
 
-// Loop through all expenses
-expenses.forEach(function(expense){
+for(let i=0;i<expenses.length;i++){
 
-    totalExpense += Number(expense.amount);
+    totalExpense = totalExpense + Number(expenses[i].amount);
+
+}
+
+
+// Show Last 5 Expenses
+
+let start = 0;
+
+if(expenses.length > 5){
+
+    start = expenses.length - 5;
+
+}
+
+for(let i=start;i<expenses.length;i++){
 
     let row = table.insertRow();
 
-    row.insertCell(0).innerHTML = expense.name;
-    row.insertCell(1).innerHTML = expense.category;
-    row.insertCell(2).innerHTML = "₹" + expense.amount;
+    row.insertCell(0).innerHTML = expenses[i].name;
 
-});
+    row.insertCell(1).innerHTML = expenses[i].category;
 
-// Update cards
+    row.insertCell(2).innerHTML = "₹" + expenses[i].amount;
+
+    row.insertCell(3).innerHTML = expenses[i].date;
+
+}
+
+
+// ================================
+// Update Cards
+// ================================
+
 document.getElementById("expense").innerHTML = "₹" + totalExpense;
 
 let remaining = monthlyBudget - totalExpense;
@@ -38,25 +84,80 @@ document.getElementById("remaining").innerHTML = "₹" + remaining;
 
 document.getElementById("saving").innerHTML = "₹" + remaining;
 
-// Update progress bar
-document.getElementById("budgetBar").value = totalExpense;
 
-// Budget warning
-if(totalExpense > monthlyBudget){
+// ================================
+// Progress Bar
+// ================================
 
-    alert("⚠ You have exceeded your monthly budget!");
+let percentage = (totalExpense / monthlyBudget) * 100;
+
+if(percentage > 100){
+
+    percentage = 100;
 
 }
+
+document.getElementById("budgetBar").value = percentage;
+
+document.getElementById("budgetText").innerHTML =
+
+percentage.toFixed(1) + "% Budget Used";
+
+
+// ================================
+// Budget Alert
+// ================================
+
+if(totalExpense > monthlyBudget){
+
+    alert("⚠ Warning! You have exceeded your monthly budget.");
+
+}
+
+
+// ================================
+// Date & Time
+// ================================
+
 function updateDateTime(){
 
     let now = new Date();
 
     document.getElementById("dateTime").innerHTML =
-    "📅 " + now.toLocaleDateString() +
-    " | 🕒 " + now.toLocaleTimeString();
+
+    "📅 " +
+
+    now.toLocaleDateString() +
+
+    " | 🕒 " +
+
+    now.toLocaleTimeString();
 
 }
 
 updateDateTime();
 
 setInterval(updateDateTime,1000);
+
+
+// ================================
+// Daily Saving Tips
+// ================================
+
+let tips = [
+
+"💰 Save at least 20% of your monthly income.",
+
+"🛒 Make a shopping list before buying.",
+
+"☕ Avoid unnecessary daily spending.",
+
+"📊 Track every expense regularly.",
+
+"🎯 Set a monthly saving goal."
+
+];
+
+let random = Math.floor(Math.random() * tips.length);
+
+document.querySelector(".quote p").innerHTML = tips[random];
