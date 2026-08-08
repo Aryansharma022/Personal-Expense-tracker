@@ -7,7 +7,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reports</title>
+<title>Expense Reports</title>
+<link rel="icon" href="logo.jpeg">
 
 <link rel="stylesheet" href="pro4.css">
 
@@ -17,41 +18,108 @@
 
 <div class="container">
 
-<h1>Expense Report</h1>
+<h1>📊 Expense Reports</h1>
 
-<div class="reportBox">
-
-<div class="card">
-
-<h2>Total Expenses</h2>
-
-<p id="totalExpense">₹0</p>
-
-</div>
+<div class="cards">
 
 <div class="card">
 
-<h2>Total Transactions</h2>
+<h3>Total Expense</h3>
 
-<p id="totalTransaction">0</p>
+<h2 id="totalExpense">₹0</h2>
 
 </div>
 
 <div class="card">
 
-<h2>Highest Expense</h2>
+<h3>Monthly Budget</h3>
 
-<p id="highestExpense">₹0</p>
+<h2 id="budget">₹0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Remaining Budget</h3>
+
+<h2 id="remaining">₹0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Total Transactions</h3>
+
+<h2 id="transactions">0</h2>
 
 </div>
 
 </div>
 
-<button onclick="window.location.href='pro1.html'">
+<div class="report-box">
 
-⬅ Back to Dashboard
+<h2>Category Wise Expenses</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Category</th>
+
+<th>Total Amount</th>
+
+</tr>
+
+</thead>
+
+<tbody id="categoryTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="progress-box">
+
+<h2>Budget Usage</h2>
+
+<progress
+id="budgetBar"
+value="0"
+max="100">
+
+</progress>
+
+<p id="percentage"></p>
+
+</div>
+
+<div class="buttons">
+
+<a href="pro1.html">
+
+<button class="dashboard">
+
+🏠 Dashboard
 
 </button>
+
+</a>
+
+<a href="pro3.html">
+
+<button class="history">
+
+📋 Expense History
+
+</button>
+
+</a>
+
+</div>
 
 </div>
 
