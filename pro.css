@@ -1,122 +1,199 @@
-/* Remove default browser spacing */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ==========================
+   Reset
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-/* Whole webpage */
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(45deg, #79d5ea, #9333ea);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+    background:#f4f7fc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
 
-/* Main container */
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ==========================
+   Main Container
+========================== */
+
+.container{
+    width:900px;
+    display:flex;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Login box */
-.login-box {
-    background-color: white;
-    width: 380px;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0px 5px 15px rgb(76, 113, 236);
-    text-align: center;
-}
-#email{
-    border-radius: 9px;
+/* ==========================
+   Left Side
+========================== */
+
+.left{
+    width:45%;
+    background:#2563eb;
+    color:white;
+    padding:40px;
+    text-align:center;
 }
 
-/* Logo */
-.logo {
-    width: 80px;
-    margin-bottom: 0px;
-    padding: 5px;
-    align-items: center;
+.left h1{
+    margin-bottom:20px;
+    font-size:35px;
 }
 
-/* Main heading */
-h1 {
-    color: #5019c7;
-    margin-bottom: 8px;
+.left p{
+    line-height:28px;
+    margin-bottom:30px;
 }
 
-/* Welcome text */
-h3 {
-    color: rgb(28, 71, 164);
-    margin-bottom: 25px;
+.left img{
+    width:220px;
 }
 
-/* Input boxes */
-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid gray;
-    border-radius: 8px;
-    font-size: 16px;
+/* ==========================
+   Right Side
+========================== */
+
+.right{
+    width:55%;
+    padding:40px;
 }
 
-/* Password section */
-.password-box {
-    position: relative;
+.right h2{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:25px;
 }
 
-/* Eye icon */
-#eye {
-    position: absolute;
-    right: 15px;
-    top: 12px;
-    cursor: pointer;
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
 }
 
-/* Remember section */
-.remember {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 14px;
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
 }
 
-/* Links */
-a {
-    text-decoration: none;
-    color: #2563eb;
+/* ==========================
+   Password
+========================== */
+
+.password-box{
+    display:flex;
 }
 
-/* Buttons */
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 17px;
-    cursor: pointer;
-    margin-bottom: 10px;
+.password-box input{
+    flex:1;
 }
 
-/* Hover effect */
-button:hover {
-    background-color: #1d4ed8;
+.password-box button{
+    width:55px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    border-radius:0 8px 8px 0;
 }
 
-/* Sign Up button */
-.signup {
-    background-color: #16a34a;
+/* ==========================
+   Remember & Forgot
+========================== */
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:15px;
+    font-size:14px;
 }
 
-.signup:hover {
-    background-color: #15803d;
+.options a{
+    text-decoration:none;
+    color:#2563eb;
+}
+
+.options a:hover{
+    text-decoration:underline;
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.login-btn,
+.signup-btn{
+
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.login-btn{
+    background:#2563eb;
+    color:white;
+}
+
+.login-btn:hover{
+    background:#1d4ed8;
+}
+
+.signup-btn{
+    background:#10b981;
+    color:white;
+}
+
+.signup-btn:hover{
+    background:#059669;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+.container{
+    width:95%;
+    flex-direction:column;
+}
+
+.left,
+.right{
+    width:100%;
+}
+
+.left img{
+    width:170px;
+}
+
+.options{
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-start;
+}
+
+}
+.login-logo{
+
+    width:90px;
+
+    margin-bottom:20px;
+
 }
