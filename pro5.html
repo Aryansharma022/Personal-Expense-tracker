@@ -1,30 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Profile</title>
-    <link rel="stylesheet" href="pro5.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile</title>
+<link rel="icon" href="logo.jpeg">
+
+<link rel="stylesheet" href="pro5.css">
+
 </head>
+
 <body>
 
-<div class="profile-container">
+<div class="container">
 
-    <h1>My Profile</h1>
+<div class="profile-card">
 
-    <div class="profile-card">
+<img src="logo.jpeg" class="profile-logo">
 
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="profile-img">
+<h1>My Profile</h1>
 
-        <h2 id="name">User</h2>
+<p>Manage your personal information</p>
 
-        <p id="email"></p>
+<div class="form">
 
-        <button onclick="logout()">Logout</button>
+<label>Full Name</label>
 
-    </div>
+<input
+type="text"
+id="name"
+placeholder="Enter your name">
+
+<label>Email</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email">
+
+<label>Phone Number</label>
+
+<input
+type="text"
+id="phone"
+placeholder="Enter phone number">
+
+<label>Monthly Budget (₹)</label>
+
+<input
+type="number"
+id="budget"
+placeholder="Enter monthly budget">
+
+</div>
+
+<div class="buttons">
+
+<button
+class="save"
+onclick="saveProfile()">
+
+💾 Save Profile
+
+</button>
+
+<button
+class="reset"
+onclick="resetProfile()">
+
+🔄 Reset
+
+</button>
+
+</div>
+
+<div class="buttons">
+
+<button
+class="dashboard"
+onclick="dashboard()">
+
+🏠 Dashboard
+
+</button>
+
+<button
+class="logout"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+</div>
+
+</div>
 
 </div>
 
 <script src="pro5.js"></script>
 
 </body>
+
 </html>
